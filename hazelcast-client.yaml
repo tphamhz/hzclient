@@ -1,0 +1,20 @@
+hazelcast-client:
+  network:
+    cluster-members:
+      - 127.0.0.1:5701
+#    cluster-routing:
+#      mode: SINGLE_MEMBER
+    ssl:
+      enabled: true
+      factory-class-name: com.hazelcast.nio.ssl.BasicSSLContextFactory
+      properties:
+        protocol: TLSv1.2
+
+        trustStore: /Users/tracypham/workspace/local/helm/certs/truststore.jks
+        trustStorePassword: changeit
+        trustStoreType: JKS
+
+        # Following properties are only needed when the mutual authentication is used.
+        keyStore: /Users/tracypham/workspace/local/helm/certs/hz.jks
+        keyStorePassword: hazelcast
+        keyStoreType: JKS
