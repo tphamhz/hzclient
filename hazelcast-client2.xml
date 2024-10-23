@@ -1,0 +1,24 @@
+<hazelcast-client xmlns="http://www.hazelcast.com/schema/client-config"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
+                  http://www.hazelcast.com/schema/client-config/hazelcast-client-config-5.5.xsd">
+  
+  <cluster-name>dev</cluster-name>
+  <network>
+      <cluster-members>
+          <address>127.0.0.1</address>
+      </cluster-members>
+      <ssl enabled="true">
+          <properties>
+              <property name="protocol">TLSv1.2</property>
+              <property name="trustStore">/Users/tracypham/workspace/local/certs/truststore.p12</property>
+              <property name="trustStorePassword">changeit</property>
+              <property name="trustStoreType">PKCS12</property>
+          </properties>
+      </ssl>
+  </network>
+
+  <security>
+      <username-password username="uid=tracy,ou=Users,dc=hazelcast,dc=com" password="tracy-secret"/>
+  </security>
+</hazelcast-client>
